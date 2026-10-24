@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA — Precision Tech, Audio & Minimalist Living</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Discover AURA: Museum-grade acoustic headphones, titanium smartwatches, and minimalist workspace essentials crafted with Scandinavian precision.">
+  <meta name="keywords" content="luxury headphones, minimalist tech, smart watch, titanium audio, wireless charger, scandinavian design, audiophile gear">
+  <meta name="author" content="AURA Design Labs">
+  
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AURA — Precision Tech, Audio & Minimalist Living">
+  <meta property="og:description" content="Sound and design engineered for pure immersion. Explore our flagship collections.">
+  
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  
+  <!-- Custom Design System CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111215'/><circle cx='50' cy='50' r='30' stroke='%23d4af37' stroke-width='8' fill='none'/><circle cx='50' cy='50' r='12' fill='%23d4af37'/></svg>">
+</head>
+<body>
+
+  <!-- Ambient Glow Background Overlays -->
+  <div class="bg-ambient-glow" aria-hidden="true"></div>
+  <div class="bg-ambient-glow-left" aria-hidden="true"></div>
+
+  <!-- Announcement Bar -->
+  <aside class="announcement-bar text-center">
+    <div class="container d-flex align-items-center justify-content-center flex-wrap gap-2">
+      <span class="announcement-badge">Exclusive Offer</span>
+      <span>Enjoy <strong>20% off</strong> with code <code class="text-warning fw-bold px-1 bg-dark rounded">AURA20</code> + Free Global Shipping over $99</span>
+      <a href="#shop" class="text-warning text-decoration-none fw-semibold ms-2 small">Shop Now &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- Sticky Main Navigation -->
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-aura" aria-label="Main Navigation">
+      <div class="container">
+        <!-- Brand Logo -->
+        <a class="brand-logo" href="#" aria-label="AURA Home">
+          <div class="brand-icon-mark">A</div>
+          <span>AURA</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarMain">
+          <ul class="navbar-nav gap-1">
+            <li class="nav-item">
+              <a class="nav-link nav-link-aura active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-aura" href="#shop">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-aura" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-aura" href="#gallery">Lookbook</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-aura" href="#about">Story</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-aura" href="#reviews">Reviews</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-aura" href="#faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-aura" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Quick Actions -->
+        <div class="d-flex align-items-center gap-2">
+          <!-- Currency Selector -->
+          <div class="d-none d-sm-block">
+            <select class="form-select form-select-sm form-aura py-1 px-2 text-warning fw-bold" id="currencySelector" aria-label="Select Currency" style="width: 82px;">
+              <option value="USD">$ USD</option>
+              <option value="EUR">€ EUR</option>
+              <option value="GBP">£ GBP</option>
+              <option value="INR">₹ INR</option>
+            </select>
+          </div>
+
+          <!-- Quick Search Button -->
+          <button class="icon-action-btn" data-bs-toggle="modal" data-bs-target="#quickSearchModal" aria-label="Search Catalog" title="Search (Press / or Ctrl+K)">
+            <i class="bi bi-search"></i>
+          </button>
+
+          <!-- Theme Toggle Button -->
+          <button class="icon-action-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Toggle Theme" title="Toggle Theme">
+            <i class="bi bi-sun-fill text-warning"></i>
+          </button>
+
+          <!-- Wishlist Trigger -->
+          <button class="icon-action-btn" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas" aria-label="Open Wishlist" title="Favorites">
+            <i class="bi bi-heart"></i>
+            <span class="badge-counter wishlist-count-target" style="display: none;">0</span>
+          </button>
+
+          <!-- Cart Trigger -->
+          <button class="icon-action-btn position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-label="Open Shopping Bag" title="Cart">
+            <i class="bi bi-bag"></i>
+            <span class="badge-counter cart-count-target" id="cartBadgeCount" style="display: none;">0</span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="navbar-toggler icon-action-btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" aria-controls="mobileNavOffcanvas" aria-label="Toggle navigation">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Offcanvas Navigation Menu -->
+  <div class="offcanvas offcanvas-start offcanvas-aura" tabindex="-1" id="mobileNavOffcanvas" aria-labelledby="mobileNavLabel">
+    <div class="offcanvas-header">
+      <div class="brand-logo" id="mobileNavLabel">
+        <div class="brand-icon-mark">A</div>
+        <span>AURA</span>
+      </div>
+      <button type="button" class="btn-close-aura" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+      <ul class="nav flex-column gap-2 mb-4">
+        <li class="nav-item">
+          <a class="nav-link nav-link-aura fs-5" href="#home" data-bs-dismiss="offcanvas">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-aura fs-5" href="#shop" data-bs-dismiss="offcanvas">Shop Catalog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-aura fs-5" href="#features" data-bs-dismiss="offcanvas">Key Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-aura fs-5" href="#gallery" data-bs-dismiss="offcanvas">Visual Lookbook</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-aura fs-5" href="#about" data-bs-dismiss="offcanvas">Our Philosophy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-aura fs-5" href="#reviews" data-bs-dismiss="offcanvas">Verified Reviews</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-aura fs-5" href="#faq" data-bs-dismiss="offcanvas">Help & FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-aura fs-5" href="#contact" data-bs-dismiss="offcanvas">Contact Concierge</a>
+        </li>
+      </ul>
+
+      <div class="p-3 bg-surface rounded-4 border border-secondary mb-3">
+        <label class="small text-secondary mb-2 d-block">Preferred Currency</label>
+        <div class="btn-group w-100" role="group">
+          <button type="button" class="btn btn-sm btn-outline-warning" onclick="AppState.currency='USD'; localStorage.setItem('aura_currency','USD'); renderProducts(); updateCartUI();">USD</button>
+          <button type="button" class="btn btn-sm btn-outline-warning" onclick="AppState.currency='EUR'; localStorage.setItem('aura_currency','EUR'); renderProducts(); updateCartUI();">EUR</button>
+          <button type="button" class="btn btn-sm btn-outline-warning" onclick="AppState.currency='GBP'; localStorage.setItem('aura_currency','GBP'); renderProducts(); updateCartUI();">GBP</button>
+          <button type="button" class="btn btn-sm btn-outline-warning" onclick="AppState.currency='INR'; localStorage.setItem('aura_currency','INR'); renderProducts(); updateCartUI();">INR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- =======================================================================
+         HERO SECTION
+         ======================================================================= -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <!-- Hero Copy -->
+          <div class="col-lg-6">
+            <div class="hero-tag">
+              <i class="bi bi-stars"></i>
+              <span>Next-Gen Acoustic Release · 2026</span>
+            </div>
+
+            <h1 class="hero-title">
+              Sound & Form Engineered for <span class="text-gradient-gold">Pure Immersion.</span>
+            </h1>
+
+            <p class="hero-description">
+              Experience audiophile acoustic purity paired with sculptured Danish minimalism. Hand-tuned beryllium drivers, intelligent hybrid noise cancellation, and all-day comfort.
+            </p>
+
+            <div class="d-flex flex-wrap gap-3 mb-5">
+              <a href="#shop" class="btn btn-aura-primary">
+                <span>Explore Catalog</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              <button class="btn btn-aura-secondary" onclick="openQuickViewModal('aura-sphere-pro')">
+                <i class="bi bi-play-circle text-warning fs-5"></i>
+                <span>Quick View Flagship</span>
+              </button>
+            </div>
+
+            <!-- Trust Bar / Accreditations -->
+            <div class="d-flex align-items-center gap-3 pt-3 border-top border-secondary">
+              <div class="trust-avatars">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80" alt="Customer avatar">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" alt="Customer avatar">
+                <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=100&h=100&q=80" alt="Customer avatar">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&h=100&q=80" alt="Customer avatar">
+              </div>
+              <div>
+                <div class="d-flex align-items-center gap-1 text-warning small">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <span class="fw-bold text-primary ms-1">4.9 / 5</span>
+                </div>
+                <div class="text-secondary small">Trusted by 50,000+ creators & audiophiles</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Interactive Product Showcase -->
+          <div class="col-lg-6">
+            <div class="hero-product-showcase">
+              <!-- Floating Feature Badge 1 -->
+              <div class="hero-float-badge badge-top-right">
+                <div class="feature-icon-box mb-0" style="width: 36px; height: 36px; font-size: 1rem;">
+                  <i class="bi bi-soundwave"></i>
+                </div>
+                <div>
+                  <div class="fw-bold text-primary">Hi-Res 96kHz/24bit</div>
+                  <div class="text-secondary extra-small">Beryllium Dual Drivers</div>
+                </div>
+              </div>
+
+              <!-- Floating Feature Badge 2 -->
+              <div class="hero-float-badge badge-bottom-left">
+                <div class="feature-icon-box mb-0" style="width: 36px; height: 36px; font-size: 1rem;">
+                  <i class="bi bi-battery-charging text-warning"></i>
+                </div>
+                <div>
+                  <div class="fw-bold text-primary">45h Playback</div>
+                  <div class="text-secondary extra-small">10 min charge = 6 hrs</div>
+                </div>
+              </div>
+
+              <!-- Product Image Showcase -->
+              <div class="hero-product-image-wrap">
+                <img src="assets/images/hero-headphones.jpg" alt="AURA Sphere Pro Headphones" class="hero-product-img" id="heroShowcaseImg">
+              </div>
+
+              <!-- Product Details Strip in Card -->
+              <div class="d-flex align-items-center justify-content-between pt-2">
+                <div>
+                  <div class="badge-gold text-dark badge rounded-pill px-2 py-1 mb-1">FLAGSHIP</div>
+                  <h3 class="h5 fw-bold mb-0">AURA Sphere Pro Studio</h3>
+                  <div class="text-secondary small">Selected Color: <strong id="heroColorLabel" class="text-primary">Obsidian Black</strong></div>
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                  <span class="color-swatch hero-color-swatch active" style="background-color: #111215; width: 24px; height: 24px;" data-color-name="Obsidian Black" title="Obsidian Black"></span>
+                  <span class="color-swatch hero-color-swatch" style="background-color: #8E8E93; width: 24px; height: 24px;" data-color-name="Brushed Titanium" title="Brushed Titanium"></span>
+                  <span class="color-swatch hero-color-swatch" style="background-color: #D4AF37; width: 24px; height: 24px;" data-color-name="Champagne Gold" title="Champagne Gold"></span>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between mt-3 pt-3 border-top border-secondary">
+                <div>
+                  <span class="text-secondary small d-block">Introductory Price</span>
+                  <span class="h4 fw-bold text-warning mb-0">$349</span>
+                  <span class="text-muted text-decoration-line-through small ms-2">$399</span>
+                </div>
+                <button class="btn btn-aura-primary" onclick="addToCart('aura-sphere-pro', 'Obsidian Black', 1, true)">
+                  <i class="bi bi-bag-plus"></i>
+                  <span>Add to Bag</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         VALUE PROPS / SERVICES / FEATURES BAR
+         ======================================================================= -->
+    <section class="py-5" id="features">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-3">
+            <div class="feature-card">
+              <div class="feature-icon-box">
+                <i class="bi bi-box-seam"></i>
+              </div>
+              <h4 class="h5 fw-bold mb-2">Free Express Shipping</h4>
+              <p class="text-secondary small mb-0">Complimentary 2–4 day global delivery with insured live courier tracking on all orders over $99.</p>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <div class="feature-card">
+              <div class="feature-icon-box">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h4 class="h5 fw-bold mb-2">3-Year Full Warranty</h4>
+              <p class="text-secondary small mb-0">Complete peace of mind. Every electronic hardware item is covered against defects and battery wear.</p>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <div class="feature-card">
+              <div class="feature-icon-box">
+                <i class="bi bi-arrow-repeat"></i>
+              </div>
+              <h4 class="h5 fw-bold mb-2">30-Day Risk-Free Trial</h4>
+              <p class="text-secondary small mb-0">Experience AURA acoustics in your own sanctuary. If you are not enchanted, return it for a 100% full refund.</p>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <div class="feature-card">
+              <div class="feature-icon-box">
+                <i class="bi bi-headset"></i>
+              </div>
+              <h4 class="h5 fw-bold mb-2">24/7 Concierge Support</h4>
+              <p class="text-secondary small mb-0">Direct access to acoustic specialists and tech advisors whenever you need setup assistance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         PRODUCT CATALOG (SHOP SECTION)
+         ======================================================================= -->
+    <section class="py-5" id="shop">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <span class="section-subtitle">The Curated Collection</span>
+          <h2 class="section-title">Engineered for Daily Excellence</h2>
+          <p class="section-desc">Explore our precision-crafted hardware across audio, smart wearables, and desktop architecture.</p>
+        </div>
+
+        <!-- Filter & Search Controls Bar -->
+        <div class="bg-surface p-4 rounded-4 border border-secondary mb-4">
+          <div class="row align-items-center g-3">
+            <!-- Search Input -->
+            <div class="col-md-4">
+              <div class="position-relative">
+                <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary"></i>
+                <input type="text" class="form-control form-aura ps-5" id="productSearchInput" placeholder="Search by name, spec, or feature..." aria-label="Search catalog">
+              </div>
+            </div>
+
+            <!-- Price Range Filter Slider -->
+            <div class="col-md-4">
+              <div class="d-flex justify-content-between align-items-center mb-1 small">
+                <span class="text-secondary">Max Price Filter:</span>
+                <span class="fw-bold text-warning" id="priceRangeDisplay">$600</span>
+              </div>
+              <input type="range" class="form-range" id="priceRangeSlider" min="50" max="600" step="25" value="600" aria-label="Filter by price">
+            </div>
+
+            <!-- Sort Selector -->
+            <div class="col-md-4">
+              <div class="d-flex align-items-center gap-2">
+                <label for="productSortSelect" class="text-secondary small text-nowrap mb-0">Sort By:</label>
+                <select class="form-select form-aura" id="productSortSelect" aria-label="Sort products">
+                  <option value="featured">Featured / Curated</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Highest Rated</option>
+                  <option value="newest">New Releases</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div class="filter-pills-bar mt-4 mb-0">
+            <button class="filter-btn active" data-category="all">All Products</button>
+            <button class="filter-btn" data-category="Audio"><i class="bi bi-headphones me-1"></i> Audio & Acoustics</button>
+            <button class="filter-btn" data-category="Wearables"><i class="bi bi-smartwatch me-1"></i> Smart Wearables</button>
+            <button class="filter-btn" data-category="Workspace"><i class="bi bi-laptop me-1"></i> Workspace</button>
+            <button class="filter-btn" data-category="Accessories"><i class="bi bi-backpack me-1"></i> Everyday Carry</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Results Counter -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <span class="badge bg-dark border border-secondary text-warning px-3 py-2 rounded-pill small" id="productCountBadge">
+            Loading products...
+          </span>
+          <button class="btn btn-sm btn-link text-secondary text-decoration-none" onclick="resetFilters()">
+            <i class="bi bi-arrow-counterclockwise"></i> Reset Filters
+          </button>
+        </div>
+
+        <!-- Products Grid Container -->
+        <div class="row g-4" id="productsGrid">
+          <!-- Dynamically populated by js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         VISUAL LOOKBOOK / GALLERY / PORTFOLIO SECTION
+         ======================================================================= -->
+    <section class="py-5" id="gallery">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Visual Experience</span>
+          <h2 class="section-title">The Art of Minimalist Living</h2>
+          <p class="section-desc">Designed to integrate effortlessly into the modern home, workspace, and global journey.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="lookbook-card h-100" style="min-height: 380px;">
+              <img src="assets/images/aura-lifestyle.jpg" alt="AURA Modern Workspace Living" class="lookbook-img">
+              <div class="lookbook-overlay">
+                <span class="badge bg-warning text-dark align-self-start mb-2">EDITORIAL</span>
+                <h3 class="h4 fw-bold mb-1">Acoustic Architecture</h3>
+                <p class="text-secondary small mb-3">Harmonizing natural light, solid timber, and precision audio hardware in the creative studio.</p>
+                <a href="#shop" class="btn btn-sm btn-aura-primary align-self-start">Shop Workspace Gear</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="d-flex flex-column gap-4 h-100">
+              <div class="lookbook-card flex-grow-1">
+                <img src="assets/images/aura-smartwatch.jpg" alt="AURA Pulse Ultra on wrist" class="lookbook-img">
+                <div class="lookbook-overlay">
+                  <h4 class="h5 fw-bold mb-1">Titanium & Sapphire</h4>
+                  <p class="text-secondary small mb-0">Grade 5 durability for demanding environments.</p>
+                </div>
+              </div>
+
+              <div class="lookbook-card flex-grow-1">
+                <img src="assets/images/aura-earbuds.jpg" alt="AURA Wave Earbuds slate" class="lookbook-img">
+                <div class="lookbook-overlay">
+                  <h4 class="h5 fw-bold mb-1">Pocket Sanctuary</h4>
+                  <p class="text-secondary small mb-0">Zero-compromise spatial audio anywhere.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-6">
+            <div class="lookbook-card">
+              <img src="assets/images/aura-charging-dock.jpg" alt="AURA Arc Magnetic Charging Stand" class="lookbook-img">
+              <div class="lookbook-overlay">
+                <span class="badge bg-secondary align-self-start mb-2">CRAFTSMANSHIP</span>
+                <h4 class="h5 fw-bold mb-1">American Walnut & Billet Aluminum</h4>
+                <p class="text-secondary small mb-2">Elevating everyday desktop rituals into meditative calm.</p>
+                <button class="btn btn-sm btn-aura-secondary align-self-start" onclick="openQuickViewModal('aura-arc-dock')">View Arc Dock</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-6">
+            <div class="lookbook-card">
+              <img src="assets/images/aura-backpack.jpg" alt="AURA Nomad Urban Backpack" class="lookbook-img">
+              <div class="lookbook-overlay">
+                <span class="badge bg-secondary align-self-start mb-2">URBAN COMMUTE</span>
+                <h4 class="h5 fw-bold mb-1">Weatherproof Modular Nomad</h4>
+                <p class="text-secondary small mb-2">Cordura 840D and German Fidlock hardware for world travelers.</p>
+                <button class="btn btn-sm btn-aura-secondary align-self-start" onclick="openQuickViewModal('aura-nomad-backpack')">View Nomad Pack</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         ABOUT / BRAND PHILOSOPHY SECTION
+         ======================================================================= -->
+    <section class="py-5" id="about">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="section-subtitle">Our Purpose</span>
+            <h2 class="section-title mb-4">Born from the Intersection of Acoustics and Architecture</h2>
+            <p class="text-secondary mb-3">
+              Founded in Copenhagen and San Francisco, AURA was created with a clear rebellion against planned obsolescence and excessive plastic tech gadgets.
+            </p>
+            <p class="text-secondary mb-4">
+              Every curve, chamfered edge, and transducer we engineer is designed to withstand decades of daily devotion. We fuse authentic sustainable materials—solid aerospace titanium, American hardwoods, and recycled aerospace aluminum—with state-of-the-art acoustic algorithms.
+            </p>
+
+            <!-- Stat Counters -->
+            <div class="row g-3">
+              <div class="col-6 col-sm-3">
+                <div class="stat-card">
+                  <div class="stat-number">50k+</div>
+                  <div class="text-secondary small">Happy Owners</div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="stat-card">
+                  <div class="stat-number">14</div>
+                  <div class="text-secondary small">Design Awards</div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="stat-card">
+                  <div class="stat-number">99.4%</div>
+                  <div class="text-secondary small">Satisfaction</div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="stat-card">
+                  <div class="stat-number">100%</div>
+                  <div class="text-secondary small">Carbon Offset</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="p-4 p-md-5 rounded-4 bg-surface border border-secondary">
+              <h3 class="h4 fw-bold mb-4 d-flex align-items-center gap-2">
+                <i class="bi bi-shield-shaded text-warning"></i>
+                <span>The AURA Triad Commitment</span>
+              </h3>
+
+              <div class="d-flex gap-3 mb-4">
+                <div class="feature-icon-box flex-shrink-0 mb-0">
+                  <i class="bi bi-gem"></i>
+                </div>
+                <div>
+                  <h4 class="h6 fw-bold mb-1">Uncompromising Material Integrity</h4>
+                  <p class="text-secondary small mb-0">No faux finishes or hollow plastic. We machine solid metals and ethically harvest timbers built to age gracefully with a natural patina.</p>
+                </div>
+              </div>
+
+              <div class="d-flex gap-3 mb-4">
+                <div class="feature-icon-box flex-shrink-0 mb-0">
+                  <i class="bi bi-infinity"></i>
+                </div>
+                <div>
+                  <h4 class="h6 fw-bold mb-1">Repairability & Longevity</h4>
+                  <p class="text-secondary small mb-0">Replaceable lambskin ear cushions, modular braided cables, and firmware updates for at least 7 years post-launch.</p>
+                </div>
+              </div>
+
+              <div class="d-flex gap-3">
+                <div class="feature-icon-box flex-shrink-0 mb-0">
+                  <i class="bi bi-tree"></i>
+                </div>
+                <div>
+                  <h4 class="h6 fw-bold mb-1">Carbon-Neutral Planetary Stewardship</h4>
+                  <p class="text-secondary small mb-0">100% plastic-free unboxing packaging made from molded sugarcane fiber and FSC-certified soy ink printing.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         TESTIMONIALS & SOCIAL PROOF
+         ======================================================================= -->
+    <section class="py-5" id="reviews">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Real Experiences</span>
+          <h2 class="section-title">Loved by Artists, Designers & Critics</h2>
+          <p class="section-desc">Read honest verified reviews from creative professionals around the world.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <div>
+                <div class="d-flex align-items-center gap-1 text-warning mb-3">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="mb-4 text-primary fst-italic">
+                  "The noise cancellation easily rivals the top industry names, but what completely won me over is the physical craftsmanship and warmth of the acoustic profile. Zero ear fatigue after 10 hours at the editing bay."
+                </p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-3 border-top border-secondary">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80" alt="Alexander Wright" class="testimonial-avatar">
+                <div>
+                  <h3 class="h6 fw-bold mb-0">Alexander Wright</h3>
+                  <div class="text-secondary extra-small">Creative Director · London</div>
+                  <div class="text-warning extra-small fw-bold">Verified: AURA Sphere Pro</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <div>
+                <div class="d-flex align-items-center gap-1 text-warning mb-3">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="mb-4 text-primary fst-italic">
+                  "Most multi-device chargers look like plastic alien junk cluttering your desk. The solid walnut and milled aluminum of the AURA Arc look like an intentional Scandinavian art sculpture. Flawless MagSafe snap."
+                </p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-3 border-top border-secondary">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&h=200&q=80" alt="Elena Rostova" class="testimonial-avatar">
+                <div>
+                  <h3 class="h6 fw-bold mb-0">Elena Rostova</h3>
+                  <div class="text-secondary extra-small">Architect · Copenhagen</div>
+                  <div class="text-warning extra-small fw-bold">Verified: AURA Arc Dock</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <div>
+                <div class="d-flex align-items-center gap-1 text-warning mb-3">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="mb-4 text-primary fst-italic">
+                  "Battery lasts a solid 7 days even with continuous biometric tracking and daily runs. The titanium finish doesn't pick up scuffs. Easily my favorite wearable release of the year."
+                </p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-3 border-top border-secondary">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80" alt="Marcus Chen" class="testimonial-avatar">
+                <div>
+                  <h3 class="h6 fw-bold mb-0">Marcus Chen</h3>
+                  <div class="text-secondary extra-small">Senior Tech Editor · San Francisco</div>
+                  <div class="text-warning extra-small fw-bold">Verified: AURA Pulse Ultra</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Press Mentions Logos -->
+        <div class="mt-5 pt-4 text-center">
+          <div class="text-secondary small text-uppercase letter-spacing-1 mb-4">Recognized & Featured By</div>
+          <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 gap-md-5 opacity-75">
+            <span class="fs-4 fw-bolder brand-font text-secondary">WIRED</span>
+            <span class="fs-4 fw-bolder brand-font text-secondary">THE VERGE</span>
+            <span class="fs-4 fw-bolder brand-font text-secondary">GQ</span>
+            <span class="fs-4 fw-bolder brand-font text-secondary">FORBES</span>
+            <span class="fs-4 fw-bolder brand-font text-secondary">TECHRADAR</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         FREQUENTLY ASKED QUESTIONS (ACCORDION)
+         ======================================================================= -->
+    <section class="py-5" id="faq">
+      <div class="container" style="max-width: 860px;">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Got Questions?</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-desc">Everything you need to know regarding shipping, returns, compatibility, and warranties.</p>
+        </div>
+
+        <div class="accordion accordion-aura" id="faqAccordionContainer">
+          <!-- Populated by js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         CONTACT & INQUIRY SECTION
+         ======================================================================= -->
+    <section class="py-5" id="contact">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Direct Concierge</span>
+          <h2 class="section-title">Get in Touch with Our Team</h2>
+          <p class="section-desc">Have a question regarding custom orders, enterprise gifting, or product setup? We respond within 15 minutes.</p>
+        </div>
+
+        <div class="row g-5 align-items-center">
+          <!-- Contact Info Cards -->
+          <div class="col-lg-5">
+            <div class="d-flex flex-column gap-4">
+              <div class="feature-card">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="feature-icon-box mb-0">
+                    <i class="bi bi-geo-alt"></i>
+                  </div>
+                  <div>
+                    <h3 class="h6 fw-bold mb-1">Design Studios</h3>
+                    <p class="text-secondary small mb-0">Bredgade 28, 1260 København, Denmark<br>555 Mission St, San Francisco, CA</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="feature-card">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="feature-icon-box mb-0">
+                    <i class="bi bi-envelope-at"></i>
+                  </div>
+                  <div>
+                    <h3 class="h6 fw-bold mb-1">Email Concierge</h3>
+                    <p class="text-secondary small mb-0">concierge@aura-design.com<br>press@aura-design.com</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="feature-card">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="feature-icon-box mb-0">
+                    <i class="bi bi-telephone"></i>
+                  </div>
+                  <div>
+                    <h3 class="h6 fw-bold mb-1">Client Services Line</h3>
+                    <p class="text-secondary small mb-0">+1 (800) 555-AURA (Toll-Free)<br>Mon – Sun: 24/7 Global Live Support</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Functional Contact Form -->
+          <div class="col-lg-7">
+            <div class="p-4 p-md-5 rounded-4 bg-surface border border-secondary shadow-lg">
+              <h3 class="h4 fw-bold mb-4">Send a Direct Message</h3>
+
+              <form id="contactForm" onsubmit="handleContactForm(event)">
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label for="contactName" class="form-label small text-secondary">Full Name *</label>
+                    <input type="text" class="form-control form-aura" id="contactName" placeholder="e.g. Maya Lindqvist" required>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <label for="contactEmail" class="form-label small text-secondary">Email Address *</label>
+                    <input type="email" class="form-control form-aura" id="contactEmail" placeholder="maya@example.com" required>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="contactSubject" class="form-label small text-secondary">Subject / Category</label>
+                    <select class="form-select form-aura" id="contactSubject">
+                      <option value="Product Inquiry">Product Inquiry & Audio Specs</option>
+                      <option value="Order Tracking & Delivery">Order Tracking & International Delivery</option>
+                      <option value="Warranty & Repairs">3-Year Warranty & Service</option>
+                      <option value="Corporate & Studio Gifting">Studio & Corporate Bulk Inquiries</option>
+                      <option value="Press & Collaborations">Press & Creative Collaborations</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="contactMessage" class="form-label small text-secondary">Message *</label>
+                    <textarea class="form-control form-aura" id="contactMessage" rows="4" placeholder="Tell us how we can assist you..." required></textarea>
+                  </div>
+
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-aura-primary w-100 py-3" id="contactSubmitBtn">
+                      <span>Send Message</span>
+                      <i class="bi bi-arrow-right ms-2"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <div id="contactAlertBox"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         NEWSLETTER / INNER CIRCLE BANNER
+         ======================================================================= -->
+    <section class="py-5">
+      <div class="container">
+        <div class="newsletter-banner">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+              <span class="badge bg-warning text-dark px-3 py-1 rounded-pill small fw-bold mb-3">VIP MEMBERSHIP</span>
+              <h2 class="h2 fw-bold mb-2">Join the AURA Inner Circle</h2>
+              <p class="text-secondary mb-0">Receive instant access to limited production runs, acoustic masterclasses, and an immediate <strong>$20 welcome credit</strong> toward your first order.</p>
+            </div>
+            <div class="col-lg-5">
+              <form onsubmit="handleNewsletter(event)" class="d-flex flex-column flex-sm-row gap-2">
+                <input type="email" class="form-control form-aura" id="newsletterEmail" placeholder="Enter your email address" required aria-label="Email address for newsletter">
+                <button type="submit" class="btn btn-aura-primary text-nowrap">
+                  <span>Claim $20</span>
+                  <i class="bi bi-send ms-1"></i>
+                </button>
+              </form>
+              <div class="extra-small text-secondary mt-2">
+                <i class="bi bi-lock me-1"></i> We respect your privacy. Unsubscribe at any time with one click.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =======================================================================
+       FOOTER
+       ======================================================================= -->
+  <footer class="footer-aura">
+    <div class="container">
+      <div class="row g-4 g-lg-5 mb-5">
+        <!-- Brand Info -->
+        <div class="col-lg-4">
+          <div class="brand-logo mb-3">
+            <div class="brand-icon-mark">A</div>
+            <span>AURA</span>
+          </div>
+          <p class="text-secondary small mb-4 pe-lg-4">
+            A Danish-American industrial design laboratory dedicated to pure acoustic fidelity, minimalist living gear, and hardware engineered to endure generations.
+          </p>
+          <div class="d-flex align-items-center">
+            <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links: Shop -->
+        <div class="col-6 col-sm-3 col-lg-2">
+          <h3 class="h6 fw-bold text-primary mb-3">Hardware</h3>
+          <ul class="list-unstyled">
+            <li><a href="#shop" class="footer-link" onclick="AppState.activeCategory='Audio'; renderProducts();">Studio Headphones</a></li>
+            <li><a href="#shop" class="footer-link" onclick="AppState.activeCategory='Audio'; renderProducts();">Wireless Earbuds</a></li>
+            <li><a href="#shop" class="footer-link" onclick="AppState.activeCategory='Wearables'; renderProducts();">Pulse Smartwatches</a></li>
+            <li><a href="#shop" class="footer-link" onclick="AppState.activeCategory='Workspace'; renderProducts();">Magnetic Docks</a></li>
+            <li><a href="#shop" class="footer-link" onclick="AppState.activeCategory='Accessories'; renderProducts();">Nomad Backpacks</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links: Company -->
+        <div class="col-6 col-sm-3 col-lg-2">
+          <h3 class="h6 fw-bold text-primary mb-3">Company</h3>
+          <ul class="list-unstyled">
+            <li><a href="#about" class="footer-link">Design Philosophy</a></li>
+            <li><a href="#gallery" class="footer-link">Visual Lookbook</a></li>
+            <li><a href="#reviews" class="footer-link">Verified Reviews</a></li>
+            <li><a href="#features" class="footer-link">Sustainability</a></li>
+            <li><a href="#contact" class="footer-link">Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links: Support -->
+        <div class="col-6 col-sm-3 col-lg-2">
+          <h3 class="h6 fw-bold text-primary mb-3">Client Care</h3>
+          <ul class="list-unstyled">
+            <li><a href="#faq" class="footer-link">Help & FAQ</a></li>
+            <li><a href="#features" class="footer-link">3-Year Warranty</a></li>
+            <li><a href="#contact" class="footer-link">Shipping & Returns</a></li>
+            <li><a href="#contact" class="footer-link">Contact Concierge</a></li>
+            <li><a href="#contact" class="footer-link">Enterprise Gifting</a></li>
+          </ul>
+        </div>
+
+        <!-- Payment & Trust Badges -->
+        <div class="col-6 col-sm-3 col-lg-2">
+          <h3 class="h6 fw-bold text-primary mb-3">Accepted Payments</h3>
+          <div class="d-flex flex-wrap gap-2 text-secondary fs-4">
+            <i class="bi bi-credit-card" title="Visa / Mastercard"></i>
+            <i class="bi bi-apple" title="Apple Pay"></i>
+            <i class="bi bi-google" title="Google Pay"></i>
+            <i class="bi bi-paypal" title="PayPal"></i>
+            <i class="bi bi-shield-lock" title="256-Bit SSL Secured"></i>
+          </div>
+          <div class="extra-small text-secondary mt-3">
+            <i class="bi bi-lock-fill text-success"></i> 256-bit Bank-grade TLS encrypted checkout.
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright & Bottom Strip -->
+      <div class="pt-4 border-top border-secondary d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="extra-small text-secondary mb-0">
+          &copy; 2026 AURA Design Labs Inc. All rights reserved. Handcrafted with Scandinavian aesthetics.
+        </p>
+        <div class="d-flex gap-4 extra-small">
+          <a href="#" class="text-secondary text-decoration-none">Privacy Policy</a>
+          <a href="#" class="text-secondary text-decoration-none">Terms of Service</a>
+          <a href="#" class="text-secondary text-decoration-none">Cookie Preferences</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       OFFCANVAS: SHOPPING CART DRAWER
+       ======================================================================= -->
+  <div class="offcanvas offcanvas-end offcanvas-aura" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+    <div class="offcanvas-header">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-bag text-warning fs-5"></i>
+        <h3 class="h5 fw-bold mb-0" id="cartOffcanvasLabel">Your Shopping Bag</h3>
+      </div>
+      <button type="button" class="btn-close-aura" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+      <div>
+        <!-- Free Shipping Progress -->
+        <div class="free-shipping-progress">
+          <div class="small" id="freeShippingText">
+            Add <strong>$99</strong> more for <strong>FREE Express Shipping</strong>!
+          </div>
+          <div class="progress-aura">
+            <div class="progress-aura-bar" id="freeShippingProgressBar" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- Cart Items List Container -->
+        <div id="cartItemsList">
+          <!-- Populated by js/app.js -->
+        </div>
+
+        <!-- Empty Cart State -->
+        <div id="cartEmptyState" class="text-center py-5" style="display: none;">
+          <i class="bi bi-bag-x text-secondary display-3 mb-3"></i>
+          <h5>Your Bag is Empty</h5>
+          <p class="text-secondary small mb-4">Discover our award-winning acoustic headphones and workspace architecture.</p>
+          <a href="#shop" class="btn btn-aura-primary" data-bs-dismiss="offcanvas">
+            <span>Explore Bestsellers</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Cart Bottom Summary -->
+      <div id="cartSummaryBox" class="pt-3 border-top border-secondary">
+        <!-- Coupon Input -->
+        <div class="input-group mb-3">
+          <input type="text" class="form-control form-aura" id="cartPromoInput" placeholder="Promo code (e.g. AURA20)" aria-label="Promo code">
+          <button class="btn btn-aura-outline" type="button" onclick="applyCouponCode()">Apply</button>
+        </div>
+
+        <div class="d-flex justify-content-between mb-2 small text-secondary">
+          <span>Subtotal</span>
+          <span class="text-primary fw-bold" id="cartSubtotal">$0</span>
+        </div>
+
+        <div class="d-flex justify-content-between mb-2 small text-warning" id="cartDiscountRow" style="display: none;">
+          <span>Promo Discount</span>
+          <span class="fw-bold" id="cartDiscountAmount">-$0</span>
+        </div>
+
+        <div class="d-flex justify-content-between mb-2 small text-secondary">
+          <span>Worldwide Shipping</span>
+          <span class="text-primary" id="cartShippingAmount">Calculated at checkout</span>
+        </div>
+
+        <div class="d-flex justify-content-between mb-3 small text-secondary">
+          <span>Estimated Sales Tax (8%)</span>
+          <span class="text-primary" id="cartTaxAmount">$0</span>
+        </div>
+
+        <div class="d-flex justify-content-between mb-4 fs-5 fw-bold border-top border-secondary pt-2">
+          <span>Estimated Total</span>
+          <span class="text-warning" id="cartGrandTotal">$0</span>
+        </div>
+
+        <button class="btn btn-aura-primary w-100 py-3" onclick="openCheckoutModal()" data-bs-dismiss="offcanvas">
+          <span>Proceed to Secure Checkout</span>
+          <i class="bi bi-shield-lock ms-2"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       OFFCANVAS: WISHLIST DRAWER
+       ======================================================================= -->
+  <div class="offcanvas offcanvas-end offcanvas-aura" tabindex="-1" id="wishlistOffcanvas" aria-labelledby="wishlistOffcanvasLabel">
+    <div class="offcanvas-header">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-heart-fill text-danger fs-5"></i>
+        <h3 class="h5 fw-bold mb-0" id="wishlistOffcanvasLabel">Saved Favorites</h3>
+      </div>
+      <button type="button" class="btn-close-aura" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+
+    <div class="offcanvas-body">
+      <div id="wishlistItemsList">
+        <!-- Populated by js/app.js -->
+      </div>
+
+      <div id="wishlistEmptyState" class="text-center py-5">
+        <i class="bi bi-heart text-secondary display-4 mb-3"></i>
+        <h5>No Favorites Saved Yet</h5>
+        <p class="text-secondary small">Click the heart icon on any product card to save it to your personal wishlist.</p>
+        <a href="#shop" class="btn btn-aura-primary" data-bs-dismiss="offcanvas">Browse Products</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL: QUICK VIEW
+       ======================================================================= -->
+  <div class="modal fade modal-aura" id="quickViewModal" tabindex="-1" aria-labelledby="qvProductTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="badge bg-warning text-dark px-2 py-1 me-2" id="qvProductCategory">Audio</span>
+          <h3 class="modal-title h5 fw-bold mb-0" id="qvProductTitle">Product Title</h3>
+          <button type="button" class="btn-close-aura ms-auto" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <div class="modal-body p-4">
+          <div class="row g-4 align-items-center">
+            <!-- Product Image Preview -->
+            <div class="col-md-6 text-center">
+              <div class="p-3 bg-secondary rounded-4 border border-secondary">
+                <img src="assets/images/hero-headphones.jpg" id="qvProductImg" alt="Product view" class="img-fluid rounded-3" style="max-height: 320px; object-fit: contain;">
+              </div>
+            </div>
+
+            <!-- Details & Actions -->
+            <div class="col-md-6">
+              <div class="small mb-2" id="qvProductRating">
+                <i class="bi bi-star-fill text-warning"></i> 4.9 (520 reviews)
+              </div>
+
+              <div class="h3 fw-bold text-warning mb-3" id="qvProductPrice">$349</div>
+              <p class="text-secondary small mb-3" id="qvProductDesc"></p>
+
+              <!-- Color Variants Selection -->
+              <div class="mb-3">
+                <label class="small text-secondary fw-bold mb-2 d-block">Select Finish / Colorway:</label>
+                <div id="qvProductColors" class="d-flex flex-wrap gap-2"></div>
+              </div>
+
+              <!-- Quantity Selector -->
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="qty-pill">
+                  <button class="qty-btn" onclick="updateQuickViewQty(-1)">-</button>
+                  <input type="text" id="qvQtyInput" value="1" readonly class="qty-count bg-transparent border-0 text-primary fw-bold" style="width: 28px; text-align: center;">
+                  <button class="qty-btn" onclick="updateQuickViewQty(1)">+</button>
+                </div>
+                <button class="btn btn-aura-primary flex-grow-1" onclick="addQuickViewToCart(false)">
+                  <i class="bi bi-bag-plus"></i> Add to Bag
+                </button>
+                <button class="btn btn-aura-secondary" onclick="addQuickViewToCart(true)" title="Instant Checkout">
+                  Buy Now
+                </button>
+              </div>
+
+              <!-- Key Features List -->
+              <div class="pt-3 border-top border-secondary">
+                <h4 class="h6 fw-bold mb-2">Key Acoustic Highlights:</h4>
+                <ul class="list-unstyled small text-secondary mb-0" id="qvProductFeatures"></ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specs Table -->
+          <div class="mt-4 pt-3 border-top border-secondary">
+            <h4 class="h6 fw-bold mb-3">Technical Specifications</h4>
+            <div class="table-responsive">
+              <table class="table table-sm table-borderless small mb-0">
+                <tbody id="qvProductSpecs"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL: MULTI-STEP CHECKOUT WIZARD
+       ======================================================================= -->
+  <div class="modal fade modal-aura" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title h5 fw-bold" id="checkoutModalLabel">AURA Express Checkout</h3>
+          <button type="button" class="btn-close-aura" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <div class="modal-body p-4">
+          <!-- Step Indicator -->
+          <div class="step-indicator">
+            <div class="step-item active" id="stepIndicator1">
+              <div class="step-bullet">1</div>
+              <span class="extra-small">Shipping</span>
+            </div>
+            <div class="step-item" id="stepIndicator2">
+              <div class="step-bullet">2</div>
+              <span class="extra-small">Payment</span>
+            </div>
+            <div class="step-item" id="stepIndicator3">
+              <div class="step-bullet">3</div>
+              <span class="extra-small">Review</span>
+            </div>
+            <div class="step-item" id="stepIndicator4">
+              <div class="step-bullet">4</div>
+              <span class="extra-small">Confirmation</span>
+            </div>
+          </div>
+
+          <!-- STEP 1: Shipping Address -->
+          <div id="checkoutStep1">
+            <h4 class="h6 fw-bold mb-3">Shipping & Delivery Details</h4>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="shipFullName" class="form-label extra-small text-secondary">Full Name *</label>
+                <input type="text" class="form-control form-aura" id="shipFullName" value="Sophia Sterling" required>
+              </div>
+              <div class="col-sm-6">
+                <label for="shipEmail" class="form-label extra-small text-secondary">Email (for live tracking) *</label>
+                <input type="email" class="form-control form-aura" id="shipEmail" value="sophia.sterling@example.com" required>
+              </div>
+              <div class="col-12">
+                <label for="shipAddress" class="form-label extra-small text-secondary">Street Address *</label>
+                <input type="text" class="form-control form-aura" id="shipAddress" value="742 Evergreen Promenade, Suite 400" required>
+              </div>
+              <div class="col-sm-5">
+                <label for="shipCity" class="form-label extra-small text-secondary">City *</label>
+                <input type="text" class="form-control form-aura" id="shipCity" value="Seattle" required>
+              </div>
+              <div class="col-sm-4">
+                <label for="shipCountry" class="form-label extra-small text-secondary">Country</label>
+                <select class="form-select form-aura" id="shipCountry">
+                  <option selected>United States</option>
+                  <option>United Kingdom</option>
+                  <option>Germany</option>
+                  <option>Denmark</option>
+                  <option>Canada</option>
+                  <option>Australia</option>
+                  <option>India</option>
+                </select>
+              </div>
+              <div class="col-sm-3">
+                <label for="shipZip" class="form-label extra-small text-secondary">Zip / Postal *</label>
+                <input type="text" class="form-control form-aura" id="shipZip" value="98101" required>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-end mt-4">
+              <button class="btn btn-aura-primary" onclick="nextCheckoutStep()">
+                <span>Continue to Payment</span>
+                <i class="bi bi-arrow-right ms-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: Payment Details -->
+          <div id="checkoutStep2" style="display: none;">
+            <h4 class="h6 fw-bold mb-3">Select Payment Method</h4>
+
+            <!-- Simulated Credit Card Preview -->
+            <div class="credit-card-preview">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="card-chip"></div>
+                <i class="bi bi-credit-card-2-front fs-3 text-warning"></i>
+              </div>
+              <div class="h5 letter-spacing-2 font-monospace mb-4" id="cardPreviewNum">•••• •••• •••• ••••</div>
+              <div class="d-flex justify-content-between align-items-end">
+                <div>
+                  <div class="extra-small text-secondary">CARD HOLDER</div>
+                  <div class="small fw-bold">SOPHIA STERLING</div>
+                </div>
+                <div>
+                  <div class="extra-small text-secondary">EXPIRES</div>
+                  <div class="small fw-bold" id="cardPreviewExp">10/28</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment Form -->
+            <div class="mb-3">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="payMethodCard" value="card" checked>
+                <label class="form-check-label small" for="payMethodCard">Credit / Debit Card</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="payMethodApple" value="apple">
+                <label class="form-check-label small" for="payMethodApple">Apple Pay</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="payMethodPaypal" value="paypal">
+                <label class="form-check-label small" for="payMethodPaypal">PayPal</label>
+              </div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="cardNumInput" class="form-label extra-small text-secondary">Card Number *</label>
+                <input type="text" class="form-control form-aura font-monospace" id="cardNumInput" placeholder="4242 4242 4242 4242" value="4532 8920 1289 4490" required>
+              </div>
+              <div class="col-sm-6">
+                <label for="cardExpInput" class="form-label extra-small text-secondary">Expiration Date (MM/YY) *</label>
+                <input type="text" class="form-control form-aura font-monospace" id="cardExpInput" placeholder="10/28" value="10/28" required>
+              </div>
+              <div class="col-sm-6">
+                <label for="cardCvcInput" class="form-label extra-small text-secondary">Security CVC *</label>
+                <input type="password" class="form-control form-aura font-monospace" id="cardCvcInput" placeholder="892" value="892" maxlength="4" required>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn btn-aura-secondary" onclick="prevCheckoutStep()">
+                <i class="bi bi-arrow-left me-2"></i> Back
+              </button>
+              <button class="btn btn-aura-primary" onclick="nextCheckoutStep()">
+                <span>Review Order</span>
+                <i class="bi bi-arrow-right ms-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Order Review -->
+          <div id="checkoutStep3" style="display: none;">
+            <h4 class="h6 fw-bold mb-3">Order Confirmation Review</h4>
+
+            <div class="p-3 bg-surface rounded-4 border border-secondary mb-3">
+              <h5 class="extra-small text-secondary text-uppercase mb-2">Selected Items</h5>
+              <div id="checkoutItemsPreview"></div>
+            </div>
+
+            <div class="p-3 bg-surface rounded-4 border border-secondary mb-4">
+              <div class="d-flex justify-content-between mb-1 small text-secondary">
+                <span>Items Subtotal</span>
+                <span class="text-primary fw-bold" id="checkoutSubtotal">$0</span>
+              </div>
+              <div class="d-flex justify-content-between mb-1 small text-warning">
+                <span>Applied Promo Discount</span>
+                <span class="fw-bold" id="checkoutDiscount">-$0</span>
+              </div>
+              <div class="d-flex justify-content-between mb-1 small text-secondary">
+                <span>Express Insured Shipping</span>
+                <span id="checkoutShipping">FREE</span>
+              </div>
+              <div class="d-flex justify-content-between pt-2 border-top border-secondary fw-bold fs-5">
+                <span>Total Amount</span>
+                <span class="text-warning" id="checkoutTotal">$0</span>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-aura-secondary" onclick="prevCheckoutStep()">
+                <i class="bi bi-arrow-left me-2"></i> Back
+              </button>
+              <button class="btn btn-aura-primary" id="placeOrderBtn" onclick="placeOrder()">
+                <span>Place Order Securely</span>
+                <i class="bi bi-shield-check ms-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4: Success Confirmed -->
+          <div id="checkoutStep4" style="display: none;" class="text-center py-4">
+            <div class="feature-icon-box mx-auto mb-3" style="width: 64px; height: 64px; font-size: 2rem;">
+              <i class="bi bi-check2-circle text-warning"></i>
+            </div>
+            <h4 class="h3 fw-bold mb-2">Thank You for Your Order!</h4>
+            <p class="text-secondary small mb-4">
+              Your acoustic order has been successfully confirmed. A receipt and DHL tracking link have been dispatched to your email.
+            </p>
+
+            <div class="p-3 bg-surface rounded-4 border border-secondary d-inline-block text-start mb-4" style="min-width: 280px;">
+              <div class="d-flex justify-content-between mb-1 small">
+                <span class="text-secondary">Order Reference:</span>
+                <span class="fw-bold text-warning font-monospace" id="confirmedOrderId">AUR-784920</span>
+              </div>
+              <div class="d-flex justify-content-between mb-1 small">
+                <span class="text-secondary">Estimated Delivery:</span>
+                <span class="text-primary fw-semibold">2–3 Business Days</span>
+              </div>
+              <div class="d-flex justify-content-between small">
+                <span class="text-secondary">Warranty Status:</span>
+                <span class="text-success fw-semibold">3-Year Activated</span>
+              </div>
+            </div>
+
+            <div>
+              <button class="btn btn-aura-primary" data-bs-dismiss="modal">
+                <i class="bi bi-bag me-1"></i> Continue Browsing
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL: GLOBAL SEARCH (CTRL+K / / SHORTCUT)
+       ======================================================================= -->
+  <div class="modal fade modal-aura" id="quickSearchModal" tabindex="-1" aria-labelledby="globalSearchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-search text-warning"></i>
+            <h3 class="modal-title h6 fw-bold mb-0" id="globalSearchModalLabel">Instant Search</h3>
+          </div>
+          <button type="button" class="btn-close-aura" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+        <div class="modal-body p-3">
+          <input type="text" class="form-control form-aura mb-3" id="globalSearchInput" placeholder="Type headphones, smartwatch, dock, cordura..." oninput="handleGlobalSearchInput(this.value)">
+          <div id="globalSearchResults">
+            <p class="text-secondary small mb-0 text-center py-3">Type to search through audio, wearables, and workspace gear...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications Container -->
+  <div class="aura-toast-container" id="auraToastContainer"></div>
+
+  <!-- Scripts: Bootstrap 5 JS Bundle & Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  
+  <!-- Data & Application Logic -->
+  <script src="data/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
